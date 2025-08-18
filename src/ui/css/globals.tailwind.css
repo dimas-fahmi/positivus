@@ -3,18 +3,24 @@
 :root {
   --color-background: #ffffff;
   --color-foreground: #000000;
-  --color-primary: #b9ff66;
-  --color-secondary: #191a23;
-  --color-tertiary: #f3f3f3;
+  --color-primary-background: #b9ff66;
+  --color-primary-foreground: #000000;
+  --color-secondary-background: #191a23;
+  --color-secondary-foreground: #ffffff;
+  --color-tertiary-background: #f3f3f3;
+  --color-tertiary-foreground: #000000;
 }
 
 @theme inline {
   /* COLORS */
   --color-background: var(--color-background);
   --color-foreground: var(--color-foreground);
-  --color-primary: var(--color-primary);
-  --color-secondary: var(--color-secondary);
-  --color-tertiary: var(--color-tertiary);
+  --color-primary-background: var(--color-primary-background);
+  --color-primary-foreground: var(--color-primary-foreground);
+  --color-secondary-background: var(--color-secondary-background);
+  --color-secondary-foreground: var(--color-secondary-foreground);
+  --color-tertiary-background: var(--color-tertiary-background);
+  --color-tertiary-foreground: var(--color-tertiary-foreground);
 
   /* FONTS */
   --font-sans: var(--font-geist-sans);
