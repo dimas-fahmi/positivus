@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useMediaQuery } from "react-responsive";
+import Button from "./Button";
 
 const NavBar = () => {
   const isNotDesktop = useMediaQuery({
@@ -44,9 +45,7 @@ const NavBar = () => {
 
       {/* CTA Button */}
       <div className="flex items-center justify-center">
-        <button className="text-xl border rounded-xl px-8 py-5 cursor-pointer hover:bg-secondary-background hover:text-secondary-foreground">
-          Request a quote
-        </button>
+        <Button size={"xl"}>Request a quote</Button>
       </div>
     </nav>
   );

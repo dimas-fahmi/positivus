@@ -3,13 +3,23 @@ import { cva, VariantProps } from "class-variance-authority";
 import React from "react";
 
 // Variants
-const buttonVariants = cva("", {
+const buttonVariants = cva("border p-4 rounded-xl font-mono cursor-pointer", {
   variants: {
     variant: {
-      default: "bg-blue-500 text-white hover:bg-blue-600",
+      default: "hover:bg-secondary-background hover:text-secondary-foreground",
       negative: "bg-red-500 text-white hover:bg-red-600",
       primary: "bg-green-500 text-white hover:bg-green-600",
     },
+    size: {
+      sm: "text-sm px-4 py-2",
+      md: "text-md px-5 py-3",
+      lg: "text-lg px-6 py-4",
+      xl: "text-xl px-8 py-5",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+    size: "md",
   },
 });
 
@@ -19,11 +29,11 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {}
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, ...props }, ref) => {
+  ({ className, size, variant, ...props }, ref) => {
     return (
       <button
         ref={ref}
-        className={cn(buttonVariants({ variant }), className)}
+        className={cn(buttonVariants({ variant, size }), className)}
         {...props}
       />
     );
