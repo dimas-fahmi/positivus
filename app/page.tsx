@@ -1,14 +1,18 @@
 import Hero from "./components/Hero";
 import LogoTypes from "./components/LogoTypes";
+import Services from "./components/Services";
 
 export default function Home() {
   return (
-    <main className="max-w-7xl m-auto">
+    <main className="max-w-7xl m-auto space-y-6">
       {/* Hero Section */}
       <Hero />
 
       {/* Partners Section */}
       <LogoTypes />
+
+      {/* Services Section */}
+      <Services />
 
       <div className="h-[1000px]"></div>
     </main>
