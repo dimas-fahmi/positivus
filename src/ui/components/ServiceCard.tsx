@@ -3,6 +3,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import React from "react";
 import Heading from "./Heading";
 import Image from "next/image";
+import LinkButton from "./LinkButton";
 
 const serviceCardVariants = cva(
   "h-[270px] rounded-b-4xl relative overflow-hidden",
@@ -25,6 +26,8 @@ export interface CardProps
     VariantProps<typeof serviceCardVariants> {
   label: string;
   illustration: string;
+  href: string;
+  linkLabel?: string;
 }
 
 const headingVariantMap: Record<
@@ -36,10 +39,30 @@ const headingVariantMap: Record<
   tertiary: "default",
 };
 
+const linkButtonVariants: Record<
+  NonNullable<CardProps["variant"]>,
+  "quaternary" | "secondary"
+> = {
+  default: "quaternary",
+  secondary: "secondary",
+  tertiary: "quaternary",
+};
+
 const ServiceCard = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, variant, label, illustration, ...props }, ref) => {
+  (
+    { className, variant, label, illustration, href, linkLabel, ...props },
+    ref
+  ) => {
     const headingVariant = headingVariantMap[variant ?? "default"];
+    const linkButtonVariant = linkButtonVariants[variant ?? "default"];
     const headings = label ? label.split("[break]") : ["Undefined"];
+
+    const linkLabelProcessed =
+      linkLabel == undefined
+        ? "Service Info"
+        : linkLabel === "[label]"
+        ? label.replaceAll("[break]", " ")
+        : linkLabel;
 
     return (
       <div className="bg-primary-foreground h-[280px] rounded-4xl overflow-hidden border-1">
@@ -50,12 +73,20 @@ const ServiceCard = React.forwardRef<HTMLDivElement, CardProps>(
         >
           <div className="absolute inset-0 grid grid-cols-2">
             {/* Content */}
-            <div className="flex flex-col p-8">
-              {headings.map((heading, index) => (
-                <Heading key={index} variant={headingVariant} size={"xs"}>
-                  {heading}
-                </Heading>
-              ))}
+            <div className="flex flex-col justify-between p-8">
+              <div>
+                {headings.map((heading, index) => (
+                  <Heading key={index} variant={headingVariant} size={"xs"}>
+                    {heading}
+                  </Heading>
+                ))}
+              </div>
+
+              <LinkButton
+                variant={linkButtonVariant}
+                href="/anywhere"
+                label={linkLabelProcessed}
+              />
             </div>
 
             {/* Ilustration */}
