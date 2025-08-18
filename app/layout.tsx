@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/src/ui/css/globals.tailwind.css";
-import { geistMono, geistSans } from "@/src/ui/fonts";
+import { geistMono, geistSans, spaceGrotesk } from "@/src/ui/fonts";
+import NavBar from "@/src/ui/components/NavBar";
 
 export const metadata: Metadata = {
   title: "Positivus",
@@ -15,9 +16,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${spaceGrotesk.variable} ${geistMono.variable} antialiased`}
       >
+        {/* NavBar */}
+        <NavBar />
+
+        {/* Children */}
         {children}
+
+        {/* Footer */}
+        <footer></footer>
       </body>
     </html>
   );
