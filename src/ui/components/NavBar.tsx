@@ -3,18 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { useMediaQuery } from "react-responsive";
 import Button from "./Button";
 
 const NavBar = () => {
-  const isNotDesktop = useMediaQuery({
-    query: "(max-width: 768px)",
-  });
-
   return (
-    <nav className="p-4 lg:py-6 max-w-6xl m-auto font-mono grid grid-cols-[0.25fr_0.5fr_0.25fr]">
+    <nav className="md:px-0 px-4 py-4 lg:py-6 max-w-7xl m-auto font-mono grid grid-cols-[0.25fr_0.5fr_0.25fr]">
       {/* Brand */}
-      <div className="flex items-center justify-center">
+      <div className="flex items-center">
         <Image
           width={200}
           height={150}
@@ -44,7 +39,7 @@ const NavBar = () => {
       </ul>
 
       {/* CTA Button */}
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-end">
         <Button size={"xl"}>Request a quote</Button>
       </div>
     </nav>
