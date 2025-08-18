@@ -4,9 +4,9 @@ import React from "react";
 
 const Services = () => {
   return (
-    <section id="services" className="py-16">
+    <section id="services" className="py-16 px-4 md:px-0">
       {/* Header */}
-      <div className="flex gap-4">
+      <div className="flex flex-col md:flex-row gap-4">
         <Heading>Services</Heading>
         <p className="max-w-[60ch] font-mono">
           At our digital marketing agency, we offer a range of services to help
@@ -15,7 +15,7 @@ const Services = () => {
       </div>
 
       {/* Cards */}
-      <div className="mt-16 grid grid-cols-2 gap-4">
+      <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Card */}
         <ServiceCard
           variant={"tertiary"}
