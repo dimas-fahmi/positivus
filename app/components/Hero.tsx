@@ -4,7 +4,10 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section id="hero" className="grid font-mono grid-cols-2 h-[480px]">
+    <section
+      id="hero"
+      className="grid font-mono grid-cols-2 min-h-[480px] mb-6"
+    >
       {/* Hero Content */}
       <div className="flex items-center justify-center">
         {/* Content Wrapper */}
