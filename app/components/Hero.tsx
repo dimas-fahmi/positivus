@@ -1,3 +1,4 @@
+import Button from "@/src/ui/components/Button";
 import Image from "next/image";
 import React from "react";
 
@@ -16,9 +17,13 @@ const Hero = () => {
             online through a range of services including SEO, PPC, social media
             marketing, and content creation.
           </p>
-          <button className="bg-secondary-background text-secondary-foreground px-6 py-4 rounded-2xl text-xl hover:bg-transparent hover:text-foreground border cursor-pointer">
+          {/* <button className="bg-secondary-background text-secondary-foreground px-6 py-4 rounded-2xl text-xl hover:bg-transparent hover:text-foreground border cursor-pointer">
             Book a consultant
-          </button>
+          </button> */}
+
+          <Button variant={"negative"} size={"xl"}>
+            Book a consultant
+          </Button>
         </div>
       </div>
 

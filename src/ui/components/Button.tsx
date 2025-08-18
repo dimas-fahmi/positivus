@@ -7,7 +7,8 @@ const buttonVariants = cva("border p-4 rounded-xl font-mono cursor-pointer", {
   variants: {
     variant: {
       default: "hover:bg-secondary-background hover:text-secondary-foreground",
-      negative: "bg-red-500 text-white hover:bg-red-600",
+      negative:
+        "bg-secondary-background text-secondary-foreground hover:bg-background hover:text-foreground",
       primary: "bg-green-500 text-white hover:bg-green-600",
     },
     size: {
