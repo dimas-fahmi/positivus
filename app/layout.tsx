@@ -22,7 +22,7 @@ export default function RootLayout({
         <NavBar />
 
         {/* Children */}
-        <div className="px-4 lg:px-0">{children}</div>
+        <div className="px-4 lg:px-0 font-mono">{children}</div>
 
         {/* Footer */}
         <footer></footer>
