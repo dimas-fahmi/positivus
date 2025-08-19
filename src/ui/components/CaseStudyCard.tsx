@@ -1,4 +1,5 @@
 import React from "react";
+import LinkArrow from "./LinkArrow";
 
 export interface CaseStudyCardProps {
   text: string;
@@ -13,7 +14,7 @@ const CaseStudyCard = React.forwardRef<HTMLDivElement, CaseStudyCardProps>(
         <div className="space-y-6">
           <p>{text}</p>
 
-          <a href={href}>Case Info</a>
+          <LinkArrow href={href} label="Case Info" iconSize={34} />
         </div>
       </div>
     );
