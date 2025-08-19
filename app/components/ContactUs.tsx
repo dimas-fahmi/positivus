@@ -6,16 +6,14 @@ const ContactUs = () => {
   return (
     <section
       id="contactUs"
-      className="relative bg-tertiary-background md:grid md:grid-cols-2 p-6 py-16 md:py-4 md:p-4 md:px-16 rounded-2xl md:h-[280px]"
+      className="relative bg-tertiary-background md:grid md:grid-cols-2 p-6 py-16 md:py-4 md:p-4 md:px-16 rounded-2xl md:h-[280px] mb-16 md:mb-32"
     >
       {/* Content */}
       <div className="flex items-center justify-center md:justify-start">
         {/* Content Wrapper */}
         <div className="max-w-md space-y-5 text-center md:text-start">
-          <h1 className="font-mono font-bold text-3xl">
-            Let's make things happen
-          </h1>
-          <p className="font-mono">
+          <h1 className="font-bold text-3xl">Let's make things happen</h1>
+          <p>
             Contact us today to learn more about how our digital marketing
             services can help your business grow and succeed online.
           </p>

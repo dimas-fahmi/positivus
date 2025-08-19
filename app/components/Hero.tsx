@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="flex flex-col-reverse mb-16 md:mb-6 md:grid font-mono grid-cols-2 min-h-[480px]"
+      className="flex flex-col-reverse mb-16 md:mb-6 md:grid grid-cols-2 min-h-[480px]"
     >
       {/* Hero Content */}
       <div className="flex items-center justify-center">

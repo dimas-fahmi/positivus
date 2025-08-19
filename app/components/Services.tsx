@@ -4,11 +4,11 @@ import React from "react";
 
 const Services = () => {
   return (
-    <section id="services" className="py-16 md:px-0">
+    <section id="services" className="py-16 md:px-0 md:mb-16">
       {/* Header */}
-      <div className="flex flex-col md:flex-row gap-4">
-        <Heading>Services</Heading>
-        <p className="max-w-[60ch] font-mono">
+      <div className="flex flex-col md:flex-row gap-4 text-center md:text-start">
+        <Heading className="mx-auto md:mx-0">Services</Heading>
+        <p className="max-w-[60ch]">
           At our digital marketing agency, we offer a range of services to help
           businesses grow and succeed online. These services include
         </p>

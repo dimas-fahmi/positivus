@@ -3,7 +3,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import React from "react";
 
 // Variants
-const buttonVariants = cva("border p-4 rounded-xl font-mono cursor-pointer", {
+const buttonVariants = cva("border p-4 rounded-xl cursor-pointer", {
   variants: {
     variant: {
       default: "hover:bg-secondary-background hover:text-secondary-foreground",

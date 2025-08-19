@@ -39,7 +39,7 @@ const NavBar = () => {
         ref={navbar}
         className={`${
           sticky ? "fixed" : "absolute"
-        } flex xl:px-0 px-4 top-0 left-0 right-0 z-30 bg-background py-4 lg:py-6 max-w-7xl m-auto font-mono justify-between md:grid md:grid-cols-[0.25fr_0.5fr_0.25fr]`}
+        } flex xl:px-0 px-4 top-0 left-0 right-0 z-30 bg-background py-4 lg:py-6 max-w-7xl m-auto justify-between md:grid md:grid-cols-[0.25fr_0.5fr_0.25fr]`}
       >
         {/* Brand */}
         <div className="flex items-center">
@@ -95,7 +95,7 @@ const NavBar = () => {
         } bg-background border z-40 rounded-md md:hidden top-24 left-0 right-0 mx-4 p-6 space-y-6`}
       >
         {/* Nav Links */}
-        <ul className="flex flex-col gap-4 font-mono text-xl">
+        <ul className="flex flex-col gap-4 text-xl">
           <li>
             <Link href={"#"}>About Us</Link>
           </li>
