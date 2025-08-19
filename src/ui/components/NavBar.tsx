@@ -2,17 +2,45 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Button from "./Button";
 import { Menu, X } from "lucide-react";
+import { useScrollDirection } from "@/src/hooks/useScrollDirection";
 
 const NavBar = () => {
   const [overlayOpen, setOverlayOpen] = useState(false);
+  const [sticky, setSticky] = useState(false);
+
+  const navbar = useRef<HTMLElement | null>(null);
+
+  const scrollDirection = useScrollDirection();
+
+  useEffect(() => {
+    if (!navbar) return;
+
+    window.addEventListener("scroll", () => {
+      // Get Scrolling position
+      const position = window.scrollY;
+      const isPastTreshold = position > 200;
+
+      // Render Clone Navbar if passed treshold
+      if (isPastTreshold && scrollDirection === "up") {
+        setSticky(true);
+      } else {
+        setSticky(false);
+      }
+    });
+  }, [navbar, setSticky, scrollDirection]);
 
   return (
     <>
       {/* NavBar */}
-      <nav className="xl:px-0 px-4 py-4 lg:py-6 max-w-7xl m-auto font-mono flex justify-between md:grid md:grid-cols-[0.25fr_0.5fr_0.25fr]">
+      <nav
+        ref={navbar}
+        className={`${
+          sticky ? "fixed" : "absolute"
+        } flex xl:px-0 px-4 top-0 left-0 right-0 z-30 bg-background py-4 lg:py-6 max-w-7xl m-auto font-mono justify-between md:grid md:grid-cols-[0.25fr_0.5fr_0.25fr]`}
+      >
         {/* Brand */}
         <div className="flex items-center">
           <Image
