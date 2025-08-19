@@ -22,7 +22,7 @@ const cases = [
 
 const CaseStudies = () => {
   return (
-    <section id="caseStudies" className="space-y-8">
+    <section id="caseStudies" className="space-y-8 mb-16">
       {/* Header */}
       <div className="md:flex items-center gap-4 text-center md:text-start">
         <Heading className="mb-4 md:mb-0 mx-auto md:mx-0">Case Studies</Heading>
