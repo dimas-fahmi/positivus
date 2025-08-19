@@ -10,6 +10,8 @@ const buttonVariants = cva("border p-4 rounded-xl font-mono cursor-pointer", {
       negative:
         "bg-secondary-background text-secondary-foreground hover:bg-background hover:text-foreground",
       primary: "bg-green-500 text-white hover:bg-green-600",
+      negativePrimaryActive:
+        "bg-secondary-background text-secondary-foreground hover:bg-primary-background hover:text-primary-foreground hover:scale-115 transition-all duration-300 hover:border-primary-background",
     },
     size: {
       sm: "text-sm px-4 py-2",
