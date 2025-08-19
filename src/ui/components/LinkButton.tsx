@@ -42,9 +42,7 @@ const LinkButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
         </div>
 
         {/* Label */}
-        <div
-          className={`flex items-center justify-center font-mono ${labelClassName}`}
-        >
+        <div className={`flex items-center justify-center ${labelClassName}`}>
           {label}
         </div>
       </Link>

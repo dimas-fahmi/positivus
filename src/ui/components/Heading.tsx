@@ -4,7 +4,7 @@ import React from "react";
 
 // Variants
 const headingVariants = cva(
-  "px-2 tracking-wider py-0 text-3xl flex items-center justify-center font-mono rounded-lg w-fit",
+  "px-2 tracking-wider py-0 text-3xl flex items-center justify-center rounded-lg w-fit",
   {
     variants: {
       variant: {

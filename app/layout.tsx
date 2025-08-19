@@ -18,14 +18,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${spaceGrotesk.variable} ${geistMono.variable} antialiased`}
       >
-        {/* NavBar */}
-        <NavBar />
+        {/* Font Wrapper */}
+        <div className="font-mono">
+          {/* NavBar */}
+          <NavBar />
 
-        {/* Children */}
-        <div className="px-4 lg:px-0 font-mono">{children}</div>
+          {/* Children */}
+          <div className="px-4 lg:px-0">{children}</div>
 
-        {/* Footer */}
-        <footer></footer>
+          {/* Footer */}
+          <footer></footer>
+        </div>
       </body>
     </html>
   );

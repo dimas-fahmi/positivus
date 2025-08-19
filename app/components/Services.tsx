@@ -8,7 +8,7 @@ const Services = () => {
       {/* Header */}
       <div className="flex flex-col md:flex-row gap-4">
         <Heading>Services</Heading>
-        <p className="max-w-[60ch] font-mono">
+        <p className="max-w-[60ch]">
           At our digital marketing agency, we offer a range of services to help
           businesses grow and succeed online. These services include
         </p>

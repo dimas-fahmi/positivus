@@ -1,3 +1,4 @@
+import CaseStudies from "./components/CaseStudies";
 import ContactUs from "./components/ContactUs";
 import Hero from "./components/Hero";
 import LogoTypes from "./components/LogoTypes";
@@ -17,6 +18,9 @@ export default function Home() {
 
       {/* Contact Us Section */}
       <ContactUs />
+
+      {/* Case Studies Section */}
+      <CaseStudies />
 
       <div className="h-[1000px]"></div>
     </main>
