@@ -5,7 +5,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/src/utils";
 
 export const linkButtonVariants = cva(
-  "p-2 h-11 flex items-center justify-center w-11 bg-black text-white w-fit rounded-full",
+  "p-2 h-10 flex items-center justify-center bg-black text-white w-fit rounded-full",
   {
     variants: {
       variant: {
