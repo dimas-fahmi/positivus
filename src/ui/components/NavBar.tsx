@@ -92,7 +92,7 @@ const NavBar = () => {
       <div
         className={`${
           overlayOpen ? "fixed" : "hidden"
-        } bg-background border rounded-md md:hidden top-24 left-0 right-0 mx-4 p-6 space-y-6`}
+        } bg-background border z-40 rounded-md md:hidden top-24 left-0 right-0 mx-4 p-6 space-y-6`}
       >
         {/* Nav Links */}
         <ul className="flex flex-col gap-4 font-mono text-xl">
