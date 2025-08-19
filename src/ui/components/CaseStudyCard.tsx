@@ -7,9 +7,12 @@ export interface CaseStudyCardProps {
 }
 
 const CaseStudyCard = React.forwardRef<HTMLDivElement, CaseStudyCardProps>(
-  ({ href, text }) => {
+  ({ href, text }, ref) => {
     return (
-      <div className="bg-secondary-background text-secondary-foreground p-16 rounded-[50px]">
+      <div
+        className="bg-secondary-background text-secondary-foreground p-16 rounded-[50px]"
+        ref={ref}
+      >
         {/* Content Wrapper */}
         <div className="space-y-6">
           <p>{text}</p>

@@ -3,6 +3,7 @@ import ContactUs from "./components/ContactUs";
 import Hero from "./components/Hero";
 import LogoTypes from "./components/LogoTypes";
 import Services from "./components/Services";
+import WorkingProcess from "./components/WorkingProcess";
 
 export default function Home() {
   return (
@@ -21,6 +22,9 @@ export default function Home() {
 
       {/* Case Studies Section */}
       <CaseStudies />
+
+      {/* Working Process */}
+      <WorkingProcess />
 
       <div className="h-[1000px]"></div>
     </main>
