@@ -4,7 +4,7 @@ import React from "react";
 
 const Services = () => {
   return (
-    <section id="services" className="py-16 px-4 md:px-0">
+    <section id="services" className="py-16 md:px-0">
       {/* Header */}
       <div className="flex flex-col md:flex-row gap-4">
         <Heading>Services</Heading>
