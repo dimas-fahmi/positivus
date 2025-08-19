@@ -29,15 +29,16 @@ export interface LinkButtonProps
   label: string;
   href: string;
   labelClassName?: string;
+  iconSize?: number;
 }
 
 const LinkButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
-  ({ className, label, labelClassName, variant, ...props }, ref) => {
+  ({ className, label, labelClassName, variant, iconSize, ...props }, ref) => {
     return (
-      <Link ref={ref} {...props} className="flex gap-2 ">
+      <Link ref={ref} {...props} className="flex gap-2 items-center">
         {/* Icon */}
         <div className={cn(linkButtonVariants({ variant }), className)}>
-          <ArrowUpRight />
+          <ArrowUpRight size={iconSize ?? 22} />
         </div>
 
         {/* Label */}

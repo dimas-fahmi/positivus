@@ -76,7 +76,12 @@ const ServiceCard = React.forwardRef<HTMLDivElement, CardProps>(
             <div className="flex flex-col justify-between p-8">
               <div>
                 {headings.map((heading, index) => (
-                  <Heading key={index} variant={headingVariant} size={"xs"}>
+                  <Heading
+                    key={index}
+                    variant={headingVariant}
+                    size={"xs"}
+                    className="text-nowrap"
+                  >
                     {heading}
                   </Heading>
                 ))}
@@ -86,6 +91,8 @@ const ServiceCard = React.forwardRef<HTMLDivElement, CardProps>(
                 variant={linkButtonVariant}
                 href="/anywhere"
                 label={linkLabelProcessed}
+                labelClassName="text-sm md:text-base text-nowrap"
+                className="h-8 w-8"
               />
             </div>
 
