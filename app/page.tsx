@@ -1,3 +1,4 @@
+import ContactUs from "./components/ContactUs";
 import Hero from "./components/Hero";
 import LogoTypes from "./components/LogoTypes";
 import Services from "./components/Services";
@@ -13,6 +14,9 @@ export default function Home() {
 
       {/* Services Section */}
       <Services />
+
+      {/* Contact Us Section */}
+      <ContactUs />
 
       <div className="h-[1000px]"></div>
     </main>
