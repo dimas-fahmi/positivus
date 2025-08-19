@@ -50,7 +50,10 @@ const LogoContainer = ({ partner }: { partner: keyof typeof partners }) => {
 
 const LogoTypes = () => {
   return (
-    <section id="LogoTypes" className="grid grid-cols-3 md:grid-cols-6 gap-4">
+    <section
+      id="LogoTypes"
+      className="grid grid-cols-3 md:grid-cols-6 mb-16 gap-4"
+    >
       {Object.keys(partners).map((partner) => (
         <LogoContainer
           key={partner}

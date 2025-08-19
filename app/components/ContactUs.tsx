@@ -6,7 +6,7 @@ const ContactUs = () => {
   return (
     <section
       id="contactUs"
-      className="relative bg-tertiary-background md:grid md:grid-cols-2 p-6 py-16 md:py-4 md:p-4 md:px-16 rounded-2xl md:h-[280px] mb-16"
+      className="relative bg-tertiary-background md:grid md:grid-cols-2 p-6 py-16 md:py-4 md:p-4 md:px-16 rounded-2xl md:h-[280px] mb-16 md:mb-32"
     >
       {/* Content */}
       <div className="flex items-center justify-center md:justify-start">
