@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import LogoTypes from "./components/LogoTypes";
 import Services from "./components/Services";
 import Team from "./components/Team";
+import Testimonials from "./components/Testimonials";
 import WorkingProcess from "./components/WorkingProcess";
 
 export default function Home() {
@@ -29,6 +30,9 @@ export default function Home() {
 
       {/* Team Section */}
       <Team />
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       <div className="h-[1000px]"></div>
     </main>

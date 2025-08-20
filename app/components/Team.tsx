@@ -50,7 +50,7 @@ const teamMembers = [
 
 const Team = () => {
   return (
-    <section id="team">
+    <section id="team" className="mb-16">
       {/* Header */}
       <SectionHeader
         header="Our Team"
