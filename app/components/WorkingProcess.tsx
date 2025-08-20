@@ -6,7 +6,7 @@ import React from "react";
 
 const WorkingProcess = () => {
   return (
-    <section id="workingProcess">
+    <section id="workingProcess" className="mb-16">
       {/* Header */}
       <SectionHeader
         header="Our Working Process"

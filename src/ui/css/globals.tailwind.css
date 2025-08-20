@@ -37,3 +37,15 @@ body {
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
+
+.profile-container {
+  -webkit-mask-image: url("/resources/images/flowerShape.png");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+
+  mask-image: url("/resources/images/flowerShape.png");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
