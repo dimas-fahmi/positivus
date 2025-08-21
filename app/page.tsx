@@ -1,4 +1,5 @@
 import CaseStudies from "./components/CaseStudies";
+import ContactForm from "./components/ContactForm";
 import ContactUs from "./components/ContactUs";
 import Hero from "./components/Hero";
 import LogoTypes from "./components/LogoTypes";
@@ -33,6 +34,9 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <Testimonials />
+
+      {/* Contact Form Section */}
+      <ContactForm />
 
       <div className="h-[1000px]"></div>
     </main>
