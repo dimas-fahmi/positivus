@@ -117,7 +117,7 @@ const Testimonials = () => {
   const realIndex = virtualIndex - 1; // adjust for clone
 
   return (
-    <section id="testimonials">
+    <section id="testimonials" className="mb-16">
       {/* Header */}
       <SectionHeader
         header="Testimonials"
