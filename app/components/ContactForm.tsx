@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/src/ui/components/Button";
 import SectionHeader from "@/src/ui/components/SectionHeader";
 import Image from "next/image";
@@ -5,7 +7,7 @@ import React from "react";
 
 const ContactForm = () => {
   return (
-    <section id="contactForm">
+    <section id="contactForm" suppressHydrationWarning>
       {/* Header */}
       <SectionHeader
         header="Contact Form"
@@ -23,7 +25,7 @@ const ContactForm = () => {
             <div></div>
 
             {/* Form */}
-            <form action="" className="space-y-6">
+            <form action="" className="space-y-6" suppressHydrationWarning>
               {/* Name */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="name" className="text-lg">

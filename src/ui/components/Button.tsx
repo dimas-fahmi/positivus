@@ -9,7 +9,7 @@ const buttonVariants = cva("border p-4 rounded-xl cursor-pointer", {
       default: "hover:bg-secondary-background hover:text-secondary-foreground",
       negative:
         "bg-secondary-background text-secondary-foreground hover:bg-background hover:text-foreground",
-      primary: "bg-green-500 text-white hover:bg-green-600",
+      primary: "bg-primary-background text-primary-foreground",
       negativePrimaryActive:
         "bg-secondary-background text-secondary-foreground hover:bg-primary-background hover:text-primary-foreground hover:scale-115 transition-all duration-300 hover:border-primary-background",
     },

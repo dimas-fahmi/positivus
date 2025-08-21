@@ -37,8 +37,6 @@ export default function Home() {
 
       {/* Contact Form Section */}
       <ContactForm />
-
-      <div className="h-[1000px]"></div>
     </main>
   );
 }
