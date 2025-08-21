@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@/src/ui/css/globals.tailwind.css";
 import { geistMono, geistSans, spaceGrotesk } from "@/src/ui/fonts";
 import NavBar from "@/src/ui/components/NavBar";
+import Footer from "@/src/ui/components/Footer";
 
 export const metadata: Metadata = {
   title: "Positivus",
@@ -24,10 +25,10 @@ export default function RootLayout({
           <NavBar />
 
           {/* Children */}
-          <div className="px-4 lg:px-0">{children}</div>
+          <div className="px-4 lg:px-0 pb-16">{children}</div>
 
           {/* Footer */}
-          <footer></footer>
+          <Footer />
         </div>
       </body>
     </html>
