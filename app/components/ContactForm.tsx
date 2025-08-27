@@ -37,6 +37,7 @@ const ContactForm = () => {
                   id="name"
                   className="border rounded-xl h-13 bg-secondary-foreground text-secondary-background px-4 outline-0"
                   autoComplete="off"
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -51,6 +52,7 @@ const ContactForm = () => {
                   id="email"
                   className="border rounded-xl h-13 bg-secondary-foreground text-secondary-background px-4 outline-0"
                   autoComplete="off"
+                  suppressHydrationWarning
                 />
               </div>
 

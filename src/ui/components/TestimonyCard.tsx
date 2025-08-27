@@ -13,11 +13,6 @@ export interface TestimonyCardProps {
 const TestimonyCard = ({ data, activeIndex, index }: TestimonyCardProps) => {
   return (
     <motion.div
-      initial={{ scale: 0.9 }}
-      animate={index === activeIndex + 1 ? { scale: 1 } : { scale: 0.9 }}
-      transition={{
-        duration: 0.3,
-      }}
       className={`min-w-[80vw] md:min-w-[50vw] p-4 snap-center space-y-4`}
     >
       {/* Testimony Card */}
@@ -32,7 +27,7 @@ const TestimonyCard = ({ data, activeIndex, index }: TestimonyCardProps) => {
       {/* Info Card */}
       <div className="flex flex-col gap-1">
         <span className="font-bold text-lg text-primary-background">
-          {data.name} {data.id}
+          {data.name} {data.id + 1}
         </span>
         <span className="text-sm">{data.about}</span>
       </div>
