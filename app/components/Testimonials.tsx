@@ -67,54 +67,106 @@ const Testimonials = () => {
     testimonials[0],
   ];
 
-  const [virtualIndex, setVirtualIndex] = useState(1); // start at first real card
+  // VirtualData
+  const [virtualData, setVirtualData] = useState(extendedData);
 
-  const move = (direction: "next" | "prev") => {
-    setVirtualIndex((prev) => (direction === "next" ? prev + 1 : prev - 1));
-  };
+  // Index listener
+  const [realIndex, setRealIndex] = useState(0);
+  const [virtualIndex, setVirtualIndex] = useState(1);
 
-  // slide whenever virtualIndex changes
-  useEffect(() => {
-    if (!wrapperRef.current) return;
-    const cardWidth = wrapperRef.current.firstElementChild?.scrollWidth || 0;
+  // Moved by user
+  const [isMoved, setIsMoved] = useState(false);
 
-    wrapperRef.current.scrollTo({
-      left: cardWidth * virtualIndex,
-      behavior: "smooth",
-    });
-  }, [virtualIndex]);
-
-  // handle snapping after smooth scroll ends
-  useEffect(() => {
+  /**
+   *
+   * Function to scroll the container one card at a time based on given direction
+   *
+   * @param direction "left" or "right"
+   * @returns will return false if failed and will return true if succeeded
+   */
+  const scroll = (direction: "left" | "right") => {
     const wrapper = wrapperRef.current;
-    if (!wrapper) return;
+    if (!wrapper) return false;
+
     const cardWidth = wrapper.firstElementChild?.scrollWidth || 0;
 
-    const handleSnap = () => {
-      if (virtualIndex === 0) {
-        // snap from first clone -> last real
-        wrapper.scrollTo({
-          left: cardWidth * testimonials.length,
-          behavior: "instant",
-        });
+    wrapper.scrollTo({
+      left:
+        direction === "left"
+          ? wrapper.scrollLeft - cardWidth
+          : wrapper.scrollLeft + cardWidth,
+      behavior: "smooth",
+    });
 
-        setVirtualIndex(testimonials.length);
-      } else if (virtualIndex === testimonials.length + 1) {
-        // snap from last clone -> first real
-        wrapper.scrollTo({
-          left: cardWidth * 1,
-          behavior: "instant",
-        });
+    return true;
+  };
 
-        setVirtualIndex(1);
+  const move = (direction: "next" | "prev") => {
+    setIsMoved(true);
+
+    setVirtualIndex((prev) => {
+      if (direction === "prev") {
+        return prev - 1;
       }
-    };
 
-    wrapper.addEventListener("scrollend", handleSnap);
-    return () => wrapper.removeEventListener("scrollend", handleSnap);
-  }, [virtualIndex]);
+      if (direction === "next") {
+        return prev + 1;
+      }
 
-  const realIndex = virtualIndex - 1; // adjust for clone
+      return prev;
+    });
+
+    setRealIndex((prev) => {
+      if (direction === "next" && prev + 1 === testimonials.length) {
+        wrapperRef?.current?.scrollTo({
+          left:
+            wrapperRef.current.scrollLeft -
+            wrapperRef.current.firstElementChild!.scrollWidth *
+              testimonials.length,
+          behavior: "instant",
+        });
+      }
+
+      if (direction === "prev" && prev === 0) {
+        wrapperRef?.current?.scrollTo({
+          left:
+            wrapperRef.current.scrollLeft +
+            wrapperRef.current.firstElementChild!.scrollWidth *
+              testimonials.length,
+          behavior: "instant",
+        });
+      }
+
+      if (direction === "next" && prev + 1 === testimonials.length) {
+        scroll("right");
+        return 0;
+      }
+
+      if (direction === "prev" && prev === 0) {
+        scroll("left");
+        return testimonials.length - 1;
+      }
+
+      if (direction === "next") {
+        scroll("right");
+        return prev + 1;
+      }
+
+      if (direction === "prev") {
+        scroll("left");
+        return prev - 1;
+      }
+
+      return prev;
+    });
+  };
+
+  // Sync container position with virtual index at mount
+  useEffect(() => {
+    if (!isMoved && virtualIndex === 1 && realIndex === 0) {
+      scroll("right");
+    }
+  }, []);
 
   return (
     <section id="testimonials" className="mb-16">
@@ -132,7 +184,7 @@ const Testimonials = () => {
           ref={wrapperRef}
           className="flex overflow-x-scroll gap-4 snap-x scrollbar-none mb-16"
         >
-          {extendedData.map((item, index) => (
+          {virtualData.map((item, index) => (
             <TestimonyCard
               key={index}
               activeIndex={realIndex}
@@ -145,8 +197,8 @@ const Testimonials = () => {
         {/* Controller */}
         <div className="flex items-center justify-center gap-4">
           <button
-            onClick={() => move("prev")}
             aria-label="Previous testimonial"
+            onClick={() => move("prev")}
           >
             <ChevronLeft />
           </button>
@@ -165,7 +217,7 @@ const Testimonials = () => {
             ))}
           </div>
 
-          <button onClick={() => move("next")} aria-label="Next testimonial">
+          <button aria-label="Next testimonial" onClick={() => move("next")}>
             <ChevronRight />
           </button>
         </div>
