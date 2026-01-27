@@ -73,12 +73,12 @@ const Footer = () => {
             <h1 className="text-xl font-semibold text-primary-background tracking-wider">
               Contact Us
             </h1>
-            <div className="opacity-70 font-light font-sans space-y-2">
-              <p>example@positivus.dimasfahmi.pro</p>
+            <div className="opacity-70 font-light font-sans text-xs flex flex-col gap-2">
+              <a href="mailto:contact@dimasfahmi.pro">contact@dimasfahmi.pro</a>
 
-              <p>+1 234-567-890</p>
-              <p>123 Stree, City Name</p>
-              <p>State, Country Name</p>
+              <a href="tel:6285172305405">+62 851-7230-5405</a>
+              <p>Rancaekek-Garut Highway Street, Bandung, 45363</p>
+              <p>West Java, Indonesia</p>
             </div>
           </div>
 
@@ -101,7 +101,7 @@ const Footer = () => {
         {/* More Section */}
         <div className="md:flex md:justify-between text-center lg:text-start">
           {/* Copyright section */}
-          <div>2024 Positivus - Made With Astro by Manul</div>
+          <div>&copy;{new Date().getFullYear()} Positivus - Developed with React by <a href="https://github.com/dimas-fahmi">Dimas Fahmi</a></div>
 
           {/* Credits Section */}
           <div>Credits ( Olga, Esteban) & Licence</div>
